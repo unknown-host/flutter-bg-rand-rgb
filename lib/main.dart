@@ -9,7 +9,7 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Random background color on click',
       home: Scaffold(
         body: Center(
           child: Wraper(),
@@ -19,13 +19,13 @@ class Demo extends StatelessWidget {
   }
 }
 
-class Wraper extends StatefulWidget {
-  const Wraper({Key? key}) : super(key: key);
+class Screen extends StatefulWidget {
+  const Screen({Key? key}) : super(key: key);
   @override
-  State<Wraper> createState() => _WraperState();
+  State<Screen> createState() => _ScreenState();
 }
 
-class _WraperState extends State<Wraper> {
+class _ScreenState extends State<Screen> {
   Color _color = RGBO.color();
 
   void _handleTap() {
@@ -33,7 +33,6 @@ class _WraperState extends State<Wraper> {
       _color = RGBO.color();
     });
   }
-
 
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -45,7 +44,7 @@ class _WraperState extends State<Wraper> {
         child: Center(
           child: Text(
             'Hey there \n the background rgb is $_color',
-            style: const TextStyle(fontSize: 32.0, color: Colors.white, ),
+            style: const TextStyle(fontSize: 32.0, color: Colors.white,),
           ),
         ),
       ),
